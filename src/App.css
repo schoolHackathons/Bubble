@@ -1,0 +1,49 @@
+.App {
+  height:100px ;
+}
+
+.App-logo {
+  animation: App-logo-grow infinite 3s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 100;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-menu {
+  font-size: large;
+  background-color: #89cff0;
+  width: 20%;
+  float: left;
+
+}
+
+.App-right {
+  background-color: purple;
+  width:20%;
+  float:right;
+}
+
+.App-main {
+  display: flex;
+}
+
+.App-container {
+  background-color: blue;
+  flex:1;
+
+}
+
+@keyframes App-logo-grow {
+  from { transform: scale(.5); }
+  to { transform: scale(1.8); }
+}

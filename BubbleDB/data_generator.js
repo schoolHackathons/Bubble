@@ -25,6 +25,8 @@ function generateBubble(bubbleData){
     };
 
   // Print to the console
+
+
   console.log(bubble);
 
   // Insert into MongoDB

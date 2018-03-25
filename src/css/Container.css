@@ -1,0 +1,10 @@
+.Container {
+  background-color: pink;
+  width:auto;
+  height:auto;
+  padding: 30%;
+  color: blue;
+  margin: 7.5%;
+  text-align: center;
+  border-radius: 25px;
+}

@@ -1,0 +1,27 @@
+.Search-card {
+  background-color: green;
+  width:auto;
+  height:auto;
+  padding: 7.5%;
+  color: blue;
+  margin: 7.5%;
+  border-radius: 25px;
+  text-align:center;
+}
+
+.Search-bar{
+  display: flex;
+  margin-bottom: 20%;
+
+
+}
+
+.Circle{
+  margin-left:50%;
+  width: auto;
+}
+
+.Search-results{
+  height:auto;
+  background-color: blue;
+}

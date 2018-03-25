@@ -1,0 +1,39 @@
+.Card {
+  background-color: pink;
+  width:auto;
+  height:auto;
+  padding: 7.5%;
+  color: blue;
+  margin: 7.5%;
+  text-align: center;
+  border-radius: 25px;
+
+}
+
+.Card-header {
+  font-size: large;
+  color: green;
+  margin-bottom: 10%;
+}
+
+.Card-body {
+  /* align-items: center; */
+  color: red;
+
+}
+
+.Card-mini {
+  height: 100px;
+  width: 100px;
+  background-color: #89cff0;
+  border-radius: 100%;
+  margin: auto;
+  padding: inherit; /* align-items: center; */
+  animation: App-grow infinite 3s linear;
+  text-align: center;
+}
+
+@keyframes App-grow {
+  from { transform: scale(.9);}
+  to { transform: scale(1);}
+}
