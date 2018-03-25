@@ -1,0 +1,65 @@
+
+.App {
+  text-align: center;
+  background-image: url('./bubblebackground.png');
+  background-size:contain;
+  height: 100px;
+  resize: repeat;
+  padding-bottom: 51%;
+
+}
+
+.App-logo {
+  animation: App-logo-grow infinite 3s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #154A5A;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-body {
+  padding-top: 5%;
+  font-size: large;
+  height: auto;
+}
+
+/* .App {
+  height:100px ;
+} */
+
+.App-menu {
+  font-size: large;
+  background-color: #89cff0;
+  width: 20%;
+  float: left;
+}
+
+.App-right {
+  background-color: purple;
+  width:20%;
+  float:right;
+}
+
+.App-main {
+  display: flex;
+}
+
+.App-container {
+  background-color: blue;
+  flex:1;
+
+}
+
+@keyframes App-logo-grow {
+  from { transform: scale(.5); }
+  to { transform: scale(1.8); }
+}
