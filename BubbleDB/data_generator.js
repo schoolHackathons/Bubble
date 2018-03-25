@@ -6,14 +6,18 @@ const chance = require("chance").Chance(); // Package for random variables
 //const TOPPINGS = ["Pepperoni", "Mushrooms", "Onions", "Sausage", "Bacon", "Extra cheese", "Black olives", "Green peppers", "Pineapple","Spinach"];
 //const SIZES = ["Personal", "Small", "Medium", "Large", "X-tra Large"];
 
-var bubbleID = 0;
-var bubbleAccess = "@mail.usf.edu";
+// variables initialized when creating a bubble
+//var bubbleID = 0;
+var bubbleAccess = "mail.usf.edu";
 var bubbleName = "USF Algo";
 var bubbleFile = "awefawe";
 var bubbleTags = ["usf", "algo", "algorithm", "algorithm"];
 
+// variables creates and stored when logging in
 var userEmail = "zprimus@mail.usf.edu";
+var userName = "";
 var userPassword = "Hackabull";
+var userAccess = "";
 
 // Set-up DB Connection
 var clientPromise = stitch.StitchClientFactory.create("bubble-dplko");
@@ -22,11 +26,11 @@ var clientPromise = stitch.StitchClientFactory.create("bubble-dplko");
 // Send sample data while within this loop
 function generateBubble(bubbleData){
   // needs to get index of last item in database and add 1
-  bubbleID = bubbleID + 1;
+  //bubbleID = bubbleID + 1;
 
   // Create a random transaction
   var bubble = {
-    "id" : bubbleID,
+    //"id" : bubbleID,
     "accessKey" : bubbleAccess,
     "name" : bubbleName,
     "file" : bubbleFile,
@@ -42,18 +46,31 @@ function generateBubble(bubbleData){
   return;
 }
 
-function userInfo(userData){
-  // Create a random transaction
-  var user = {
-    "email" : userEmail,
-    "password" : userPassword
-    };
+function RegisterAccount(bubbleData){
+  if(true) {
+    var splitUserEmail = userEmail.split("@");
+    userName = splitUserEmail[0];
+    userAccess = splitUserEmail[1];
 
-  // Print to the console
-  console.log(user);
+    // Create a random transaction
+    var user = {
+      "email" : userEmail,
+      "username" : userName,
+      "password" : userPassword,
+      "userAccess" : userAccess
+      };
 
-  // Insert into MongoDB
- userData.insertOne(user);
+      // Print to the console
+      //console.log(user);
+
+      // Insert into MongoDB
+      var allBubbles = bubbleData.find(bubbleAccess);
+      //userData.insertOne(user);
+      //var allBubbles = userData.insertOne(user);
+      console.log(allBubbles);
+    } else {
+      console.log("Email or Password already taken");
+    }
 
  return;
 }
@@ -61,7 +78,7 @@ function userInfo(userData){
 function addFile(bubbleData){
   // Create a random transaction
   var bubble = {
-    "id" : bubbleID,
+    //"id" : bubbleID,
     "accessKey" : bubbleAccess,
     "name" : bubbleName,
     "file" : bubbleFile,
@@ -88,7 +105,15 @@ function filterAccess(bubbleData) {
     return;
 }
 
+function Login() {
+  if (true) {
 
+  } else {
+    console.log("Wrong Credentials");
+  }
+
+  return;
+}
 
 clientPromise.then(client => {
   const db = client.service("mongodb", "mongodb-atlas").db("BubbleDB");
@@ -104,9 +129,11 @@ clientPromise.then(client => {
   //.catch(e => console.log('error: ', e));
 
   client.login().then(() => generateBubble(bubbleData))
-  .then(() => userInfo(userData))
-  .then(() => filterAccess(bubbleData));
-
+  .then(() => RegisterAccount(userEmail, userPassword))
+  .catch(e => console.log('error: ', e));
+  //;
+  //.then(() => userInfo(userData));
+  //.then(() => filterAccess(bubbleData));
   //generateBubble(bubbleData);
 /*
   clientPromise.then(client =>client.auth.provider("google"))
