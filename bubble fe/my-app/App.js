@@ -40,11 +40,12 @@ class App extends Component {
         </label>
         <label>
           Password:
-          
+
           <input type="password" value={this.state.value} onChange={this.handleChange} />
           <br></br>
         </label>
         <input type="submit" value="Submit" />
+        <input type="button" onclick="action('#')" value="Register" />
         </form>
         </form>
         </div>
