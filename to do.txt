@@ -1,0 +1,4 @@
+things to do:
+
+functions for search 
+finctions for CRUD
